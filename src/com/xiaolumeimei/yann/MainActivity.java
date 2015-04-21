@@ -7,14 +7,22 @@ import com.xiaolumeimei.ui.ShopcartFragment;
 import com.xiaolumeimei.ui.HotsaleFragment;
 
 import android.os.Bundle;
+import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.graphics.Color;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.ViewPager;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends FragmentActivity implements OnClickListener {
@@ -60,8 +68,8 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 
 	private void addFragmentToStack(Fragment fragment) {
 		FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-		// ft.setCustomAnimations(android.R.anim.slide_in_left,
-		// android.R.anim.slide_in_left);
+		ft.setCustomAnimations(android.R.anim.slide_in_left,
+				android.R.anim.slide_in_left);
 		ft.replace(R.id.fragment_container, fragment);
 		ft.commit();
 	}
@@ -89,6 +97,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 			pager.setAdapter(new FragmentStatePagerAdapter(
 					getChildFragmentManager()) {
 
+				@SuppressLint("ValidFragment")
 				@Override
 				public Fragment getItem(final int position) {
 					return new Fragment() {
@@ -111,7 +120,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 
 				@Override
 				public int getCount() {
-					return 3;
+					return 4;
 				}
 
 				@Override
