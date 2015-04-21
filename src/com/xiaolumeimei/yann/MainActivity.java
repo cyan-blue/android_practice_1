@@ -1,42 +1,44 @@
 package com.xiaolumeimei.yann;
 
-import com.xiaolumeimei.ui.FindFragment;
-import com.xiaolumeimei.ui.MeFragment;
-import com.xiaolumeimei.ui.SearchFragment;
-import com.xiaolumeimei.ui.ShopcartFragment;
+import java.util.HashMap;
+import java.util.Map;
+
+import com.xiaolumeimei.common.view.ViewPagerIndicatorView;
 import com.xiaolumeimei.ui.HotsaleFragment;
+import com.xiaolumeimei.ui.MeFragment;
 
 import android.os.Bundle;
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.graphics.Color;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends FragmentActivity implements OnClickListener {
+	private HotsaleFragment hf;
+	private MeFragment mf;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		hf = new HotsaleFragment();
+		mf = new MeFragment();
 		findViewById(R.id.todayHotsale).setOnClickListener(this);
 		findViewById(R.id.search).setOnClickListener(this);
 		findViewById(R.id.findMei).setOnClickListener(this);
 		findViewById(R.id.shopCart).setOnClickListener(this);
 		findViewById(R.id.xiaolumeimeiMe).setOnClickListener(this);
 		findViewById(R.id.todayHotsale).performClick();
+
 	}
 
 	// 点击返回按钮
@@ -49,27 +51,27 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.todayHotsale:
-			addFragmentToStack(FragmentParent.newInstance(0));
+			addFragmentToStack(hf);
 			break;
 		case R.id.search:
-			addFragmentToStack(FragmentParent.newInstance(1));
+			addFragmentToStack(FragmentParent.newInstance(0));
 			break;
 		case R.id.findMei:
-			addFragmentToStack(FragmentParent.newInstance(2));
+			addFragmentToStack(FragmentParent.newInstance(1));
 			break;
 		case R.id.shopCart:
-			addFragmentToStack(FragmentParent.newInstance(3));
+			addFragmentToStack(FragmentParent.newInstance(2));
 			break;
 		case R.id.xiaolumeimeiMe:
-			addFragmentToStack(FragmentParent.newInstance(4));
+			addFragmentToStack(mf);
 			break;
 		}
 	}
 
 	private void addFragmentToStack(Fragment fragment) {
 		FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-		ft.setCustomAnimations(android.R.anim.slide_in_left,
-				android.R.anim.slide_in_left);
+		// ft.setCustomAnimations(android.R.anim.slide_in_left,
+		// android.R.anim.slide_in_left);
 		ft.replace(R.id.fragment_container, fragment);
 		ft.commit();
 	}

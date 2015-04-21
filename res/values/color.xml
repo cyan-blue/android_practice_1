@@ -4,5 +4,8 @@
     <color name="transparent">#00000000</color>
     <color name="white">#ffffff</color>
     <color name="mediumpurple">#9370db</color> <!-- 中紫色 -->
+    <color name="frame">#61a716</color>
+    <color name="divider">#e6e6e6</color>
+    <color name="title">#ff333333</color>
 
 </resources>

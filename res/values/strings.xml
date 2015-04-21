@@ -9,5 +9,10 @@
     <string name="findMei">发现</string>
     <string name="shopping_cart">购物车</string>
     <string name="person_center">个人中心</string>
+    <string name="yesterdayhot">昨日热销</string>
+    <string name="onlyoneday">最后一天</string>
+    <string name="todaynewthing">今日新品</string>
+    <string name="childernthing">儿童</string>
+    <string name="motherthing">妈妈</string>
 
 </resources>
