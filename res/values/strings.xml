@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">xiaolumeimei</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="hotsale">今日特卖</string>
+    <string name="search">搜索</string>
+    <string name="findMei">发现</string>
+    <string name="shopping_cart">购物车</string>
+    <string name="person_center">个人中心</string>
+
+</resources>

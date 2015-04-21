@@ -1,0 +1,104 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1.0"
+        android:background="#F7F5DE" >
+    </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/aboveLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#dbdbdb"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/fragmentRoot"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical" />
+
+            <LinearLayout
+                android:id="@+id/bottomList"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@android:color/black"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:id="@+id/bottomItemCurrentBg1"
+                    style="@style/main_bottom_item" >
+
+                    <RadioButton
+                        android:id="@+id/todayHotsale"
+                        style="@style/footbar"
+                        android:drawableTop="@drawable/tab_main_home"
+                        android:paddingTop="8dp"
+                        android:text="@string/hotsale" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/bottomItemCurrentBg2"
+                    style="@style/main_bottom_item" >
+
+                    <RadioButton
+                        android:id="@+id/search"
+                        style="@style/footbar"
+                        android:drawableTop="@drawable/tab_main_search"
+                        android:paddingTop="8dp"
+                        android:text="@string/search" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/bottomItemCurrentBg3"
+                    style="@style/main_bottom_item" >
+
+                    <RadioButton
+                        android:id="@+id/findMei"
+                        style="@style/footbar"
+                        android:drawableTop="@drawable/tab_main_findmei"
+                        android:paddingTop="8dp"
+                        android:text="@string/findMei" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/bottomItemCurrentBg4"
+                    style="@style/main_bottom_item" >
+
+                    <RadioButton
+                        android:id="@+id/shopCart"
+                        style="@style/footbar"
+                        android:drawableTop="@drawable/tab_main_cart"
+                        android:paddingTop="8dp"
+                        android:text="@string/shopping_cart" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/bottomItemCurrentBg5"
+                    style="@style/main_bottom_item" >
+
+                    <RadioButton
+                        android:id="@+id/xiaolumeimeiMe"
+                        style="@style/footbar"
+                        android:drawableTop="@drawable/tab_setting_person"
+                        android:paddingTop="8dp"
+                        android:text="@string/person_center" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
